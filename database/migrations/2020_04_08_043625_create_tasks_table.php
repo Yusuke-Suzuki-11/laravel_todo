@@ -17,7 +17,6 @@ class CreateTasksTable extends Migration
             $table->id();
             // 外部キー
             $table->integer('folder_id')->unsigned();
-
             // タイトル
             $table->string('title', 100);
             // 期限日
@@ -25,8 +24,7 @@ class CreateTasksTable extends Migration
             // 実行状況(デフォルトで未着手を設定)
             $table->integer('status')->default(1);
             // 外部キーの結びつけ
-            $table->foreign('folder_id')->references('id')->on('folders');
-
+            $table->foreign('folder_id')->references('id')->on('folders')->onDelete("cascade");
 
             $table->timestamps();
         });

@@ -5,7 +5,9 @@
     <div class="row">
       <div class="col col-md-offset-3 col-md-6">
         <nav class="panel panel-default">
-          <div class="panel-heading">会員登録</div>
+          <div class="panel-heading p-h" style="background-color: #006888">
+                    <p class="p-h-p">会員登録</p>
+                </div>
           <div class="panel-body">
             @if($errors->any())
               <div class="alert alert-danger">

@@ -29,4 +29,11 @@ class FolderController extends Controller
             'id' => $folder->id,
         ]);
     }
+
+    public function destroy(int $id)
+    {
+        $folder = Folder::find($id);
+        $folder->delete();
+        return redirect("/");
+    }
 }

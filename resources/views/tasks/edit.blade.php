@@ -7,9 +7,11 @@
 @section('content')
   <div class="container">
     <div class="row">
-      <div class="col col-md-offset-3 col-md-6">
+      <div class="col col-md-offset-2 col-md-8">
         <nav class="panel panel-default">
-          <div class="panel-heading">タスクを編集する</div>
+          <div class="panel-heading" style="background-color: #006888;">
+                    <p class="p-h-p">タスクを編集する</p>
+                </div>
           <div class="panel-body">
             @if($errors->any())
               <div class="alert alert-danger">
@@ -47,7 +49,7 @@
                        value="{{ old('due_date') ?? $task->formatted_due_date }}" />
               </div>
               <div class="text-right">
-                <button type="submit" class="btn btn-primary">送信</button>
+                <button type="submit" class="btn btn-info">送信</button>
               </div>
             </form>
           </div>
