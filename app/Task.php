@@ -10,9 +10,10 @@ class Task extends Model
     // ステータスの設定・状態別に色のクラスを渡す
     const STATUS = [
         1 => ['label' => '未着手', 'class' => 'label-danger'],
-        2 => ['label' => '着手中', 'class' => 'label-info'],
+        2 => ['label' => '実行中', 'class' => 'label-info'],
         3 => ['label' => '完了', 'class' => ''],
     ];
+
 
 
     // アクセサの設定

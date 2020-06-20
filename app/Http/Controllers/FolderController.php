@@ -13,7 +13,6 @@ class FolderController extends Controller
     //ビュー： フォルダー作成のビューを返す
     public function showCreateForm()
     {
-
         return view('folders/create');
     }
 

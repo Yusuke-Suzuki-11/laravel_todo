@@ -5,8 +5,6 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Folder;
-use App\Task;
 
 class User extends Authenticatable
 {
@@ -14,7 +12,7 @@ class User extends Authenticatable
 
     public function folders()
     {
-        return $this->hasMany(Folder::class);
+        return $this->hasMany("App\Folder");
     }
 
     public function trainings()
@@ -22,11 +20,9 @@ class User extends Authenticatable
         return $this->hasMany("App\Training");
     }
 
-    public function taskss(){
-        return $this->hasManyThrough(
-            'App\Task',
-            'App\Folder',
-        );
+    public function taskss()
+    {
+        return $this->hasManyThrough('App\Task', 'App\Folder',);
     }
 
 

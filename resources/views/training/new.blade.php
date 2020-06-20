@@ -20,16 +20,16 @@
                     <form class="upload-images p-0 border-0" id="new_post" enctype="multipart/form-data" action="{{ route('training.store') }}" accept-charset="UTF-8" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="movie">動画を追加してください</label>
-                            <input type="file" name="movie" accept="video/*"/>
+                            <label for="movie">トレーニング動画を追加してください</label>
+                            <input type="file" name="movie" accept="video/mp4"/>
                         </div>
                         <div class="form-group">
-                            <label for="title">フォルダ名</label>
-                            <input type="string" class="form-control" name="title" id="title" value="{{ old('title') }}" placeholder="タイトルを入力" />
+                            <label for="title">トレーニング名</label>
+                            <input type="string" class="form-control" name="title" id="title" value="{{ old('title') }}" placeholder="（例）プッシュアップ" />
                         </div>
                         <div class="form-group">
                             <label for="point">筋トレのコツ・ポイント</label>
-                            <input type="string" class="form-control" name="point" id="point" value="{{ old('point') }}" placeholder="タイトルを入力" />
+                            <input type="string" class="form-control" name="point" id="point" value="{{ old('point') }}" placeholder="（例）大胸筋を意識する" />
                         </div>
 
 
@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group">
                             <label for="detail">筋トレの説明</label>
-                            <textarea name="detail" class="form-control" id="detail" cols="30" rows="10" value="{{ old('point') }}" placeholder="筋トレのポイントを書く"></textarea>
+                            <textarea name="detail" class="form-control" id="detail" cols="30" rows="10"  placeholder="筋トレの説明を書く">{{ old('detail') }}</textarea>
                         </div>
                         <div class="text-right">
                             <button type="submit" class="btn btn-info">送信</button>

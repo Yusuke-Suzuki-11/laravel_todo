@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Training;
 use Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\CreateTraining;
+use Validator;
 
 
 class TrainingsController extends Controller
@@ -23,7 +25,7 @@ class TrainingsController extends Controller
         return view("training.new");
     }
 
-    public function store(Request $request){
+    public function store(CreateTraining $request){
         $training = new Training();
 
         $training->user_id = Auth::user()->id;
@@ -33,7 +35,6 @@ class TrainingsController extends Controller
         $training->set = $request->set;
         $training->num = $request->num;
         $training->save();
-
         $movie = $request->movie;
         $movie->storeAs('public/movies', $training->id . '.mp4');
         return redirect("/training/index");
@@ -49,7 +50,7 @@ class TrainingsController extends Controller
         return view("training.edit",["training"=> $training]);
     }
 
-    public function update(int $id,Request $request){
+    public function update(int $id, EditTraining $request){
         $training = Training::find($id);
         $training->title = $request->title;
         $training->detail = $request->detail;

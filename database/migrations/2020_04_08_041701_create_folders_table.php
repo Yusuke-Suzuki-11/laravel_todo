@@ -17,7 +17,7 @@ class CreateFoldersTable extends Migration
             $table->id();
             $table->string('title', 20);
             $table->timestamps();
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

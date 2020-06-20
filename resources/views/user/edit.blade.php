@@ -1,6 +1,5 @@
 @extends('layout')
 @section('content')
-
 <div class="container">
     <div class="row">
         <div class="col col-md-offset-3 col-md-6">
@@ -27,44 +26,31 @@
                             @endif
                             <input type="file" name="user_profile_photo"  value="{{ old('user_profile_photo',$user->id) }}" accept="image/jpeg,image/gif,image/png" />
                         </div>
-
-
-
                         <div class="form-group">
                             <label for="name">ユーザー名</label>
                             <input autofocus="autofocus" class="form-control" type="text" value="{{ old('user_name',$user->name) }}" name="user_name" />
                         </div>
-
-
                         <div class="form-group">
                             <label for="email">メールアドレス</label>
                             <input autofocus="autofocus" class="form-control" type="email" value="{{ old('user_email',$user->email) }}" name="user_email" />
                         </div>
-
                         <div class="form-group">
                             <label for="user_gym_name">お気に入りのジム</label>
-                            <input autofocus="autofocus" class="form-control" type="string" value="{{ old('user_gym_name',$user->user_gym_name) }}" name="gym_name" />
+                            <input autofocus="autofocus" class="form-control" type="string" value="{{ old('user_gym_name',$user->gym_name) }}" name="gym_name" placeholder="(例)ティップネス 鶴見店"/>
                         </div>
-
-
                         <div class="form-group">
                             <label for="user_gym_address">お気に入りのジムの住所</label>
-                            <input autofocus="autofocus" class="form-control" type="string" value="{{ old('user_gym_address',$user->user_gym_address) }}" name="gym_address" />
+                            <input autofocus="autofocus" class="form-control" type="string" value="{{ old('user_gym_address',$user->gym_address) }}" name="gym_address" placeholder="(例)神奈川県横浜鶴見区鶴見中央１丁目３−４" />
                         </div>
-
-
                         <div class="form-group">
                             <label for="user_password">パスワード</label>
-                            <input autofocus="autofocus" class="form-control" type="password" value="{{ old('user_password',$user->password) }}" name="user_password" />
+                            <input autofocus="autofocus" class="form-control" type="password" name="user_password" placeholder="変更の場合に入力" />
                         </div>
-
                         <div class="form-group">
-                            <label for="user_password_confirmation">パスワード</label>
+                            <label for="user_password_confirmation">パスワードの確認</label>
                             <input autofocus="autofocus" class="form-control" type="password" name="user_password_confirmation" />
                         </div>
-
                     </div>
-
                     <div class="text-right" style="padding: 15px 20px 20px 0;">
                         <button type="submit" class="btn btn-info" >送信</button>
                     </div>
@@ -73,5 +59,3 @@
         </nav>
     </div>
     @endsection
-
-

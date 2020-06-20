@@ -15,8 +15,11 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'test',
-            'email' => 'dummy@email.com',
+            'id' => 1,
+            'email' => 'test@email.com',
             'password' => bcrypt('test1234'),
+            "gym_name" => "ティップネス鶴見店",
+            "gym_address" => "神奈川県横浜市鶴見区鶴見中央１丁目３−４",
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

@@ -5,7 +5,6 @@
         @include("share.side")
         <div class="col col-md-3">
             <nav class="panel panel-default">
-
                 <div class="panel-heading" style="background-color: #006888;">
                     <p class="p-h-p">フォルダ数： {{ $all_folders_num}}</p>
                 </div>
@@ -35,7 +34,6 @@
                 <div class="panel-heading" style="background-color: #006888;">
                     <p class="p-h-p">タスク数： {{ $all_tasks_num }}</p>
                 </div>
-
                 <div class="panel-body">
                     <div class="text-right">
                         <a href="{{ route('tasks.create', ['id' => $current_folder_id]) }}" class="btn btn-default btn-block">
@@ -63,9 +61,12 @@
                                 <span class="label {{ $task->status_class }}">{{ $task->status_label }}</span>
                             </td>
                             <td>
-                                {{ $task->due_date }}
-                                @if($task->due_date < $date && $task->status_label != '完了')
-                                    <img src="/imgages/alert.png" width="24px"></img>
+                                @if ($task->due_date < $date && $task->status_label == '完了')
+                                <span class="text-info">{{$task->due_date}}</span>
+                                @elseif ($task->due_date > $date )
+                                <span class="text-danger">{{$task->due_date}}</span>
+                                @else
+                                {{$task->due_date}}
                                 @endif
                             </td>
                             <td style="padding-right: 0px">
@@ -91,4 +92,3 @@
     </div>
 </div>
 @endsection
-

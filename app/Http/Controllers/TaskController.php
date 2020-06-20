@@ -59,6 +59,9 @@ class TaskController extends Controller
         $task = new Task();
         $task->title = $request->title;
         $task->due_date = $request->due_date;
+        $task->folder_id = $current_folder->id;
+
+
 
         // 選択中のフォルダーに結びつけて保存
         $current_folder->tasks()->save($task);
@@ -111,8 +114,6 @@ class TaskController extends Controller
                 }
             }
         }
-
-
         return view('tasks.search', compact('array', 'keyword', 'folder_name', 'folder_id'));
     }
 

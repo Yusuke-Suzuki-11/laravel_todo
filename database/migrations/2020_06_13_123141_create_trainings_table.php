@@ -20,7 +20,7 @@ class CreateTrainingsTable extends Migration
             $table->string("point")->nullable();
             $table->integer("set")->nullable();
             $table->integer("num")->nullable();
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete("cascade");
             $table->timestamps();
         });
